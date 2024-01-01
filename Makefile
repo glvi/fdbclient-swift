@@ -1,0 +1,22 @@
+NPROC=$(shell nproc --ignore=2)
+SWIFT=swift
+SWIFT_COMPILER_OPTIONS=
+SWIFT_LINKER_OPTIONS=-Xlinker -rpath -Xlinker /usr/local/lib
+SWIFT_BUILD_OPTIONS=--jobs $(NPROC)
+SWIFT_TEST_OPTIONS=--parallel --num-workers $(NPROC)
+
+all: build
+
+check: test
+
+build:
+	$(SWIFT) build $(SWIFT_BUILD_OPTIONS) $(SWIFT_COMPILER_OPTIONS) $(SWIFT_LINKER_OPTIONS)
+
+run:
+	$(SWIFT) run $(SWIFT_BUILD_OPTIONS) $(SWIFT_COMPILER_OPTIONS) $(SWIFT_LINKER_OPTIONS)
+
+test:
+	$(SWIFT) test $(SWIFT_BUILD_OPTIONS) $(SWIFT_COMPILER_OPTIONS) $(SWIFT_LINKER_OPTIONS) $(SWIFT_TEST_OPTIONS)
+
+clean:
+	$(SWIFT) package clean

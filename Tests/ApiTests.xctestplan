@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "5D4616F7-20F4-47FC-8CD4-D0611F0CF44B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "DYLD_LIBRARY_PATH",
+        "value" : "\/usr\/local\/lib"
+      }
+    ],
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "DatabaseTests",
+        "NetworkTests"
+      ],
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "FDBClientTests",
+        "name" : "FDBClientTests"
+      }
+    }
+  ],
+  "version" : 1
+}

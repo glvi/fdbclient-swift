@@ -1,0 +1,13 @@
+// -*- mode: text; coding: utf-8-unix; -*- vi:ai:et:sw=4
+
+module Clibfdb [system] {
+    header "shim.h"
+    link "fdb_c"
+    export *
+}
+
+// End of file
+
+// Local Variables:
+// indent-tabs-mode: nil
+// End:
