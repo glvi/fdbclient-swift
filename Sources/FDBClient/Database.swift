@@ -23,6 +23,8 @@ extension FDB {
       db = nil
     }
 
+    public init() {}
+
     func open(clusterFile: String = "") throws {
       try createDatabase(clusterFile, &self.db)
     }
