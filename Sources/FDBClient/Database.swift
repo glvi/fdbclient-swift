@@ -25,11 +25,11 @@ extension FDB {
 
     public init() {}
 
-    func open(clusterFile: String = "") throws {
+    public func open(clusterFile: String = "") throws {
       try createDatabase(clusterFile, &self.db)
     }
 
-    func open(connectionString: String) throws {
+    public func open(connectionString: String) throws {
       try createDatabase(from: connectionString, &self.db)
     }
 
